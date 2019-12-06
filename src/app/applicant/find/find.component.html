@@ -1,0 +1,21 @@
+<mat-horizontal-stepper [linear]="true" [selectedIndex]="index">
+    <mat-step [editable]="false"  label="Question 1"></mat-step>
+    <mat-step [editable]="false" label="Question 2"></mat-step>
+    <mat-step [editable]="false" label="Question 3"></mat-step>
+    <mat-step [editable]="false" label="Job matches"></mat-step>
+</mat-horizontal-stepper>
+
+<div>
+    <h1>{{ question }}</h1>
+</div>
+
+<div class="skills">
+    <div [ngClass]="{ active: isActive(i) }" (click)="toggleActive(i)" *ngFor="let skill of ['pets', 'home', 'group_work', 'event_seat', 'face', 'motorcycle', 'language', 'extension', 'eco', 'shopping_cart', 'visibility', 'theaters']; let i = index">
+        <mat-icon>{{ skill }}</mat-icon>
+        <div>Choice  {{ i + 1 }}</div>
+    </div>
+</div>
+
+<div align="end">
+    <button mat-raised-button type="button" [routerLink]="['/', 'applicant', nextStep]" color="accent">Next</button>
+</div>

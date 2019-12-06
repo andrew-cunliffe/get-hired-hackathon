@@ -1,0 +1,40 @@
+h1 {
+    display: inline;
+    border-bottom: 4px solid #cc0033;
+    padding-right: 4rem;
+}
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    margin: 40px 0;
+
+    > * {
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+        min-height: 100px;
+        color: #cc0033;
+        background-color: #fafafa;
+        justify-content: center;
+        align-items: center;
+
+        mat-icon {
+            font-size: 3rem;
+            height: 3rem;
+            width: 3rem;
+        }
+
+        &:hover {
+            cursor: pointer;
+            background-color: #d9d9d9;
+        }
+
+        &.active {
+            color: white;
+            background-color: #cc0033;
+        }
+    }
+}
+

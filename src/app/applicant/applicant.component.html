@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="container__nav">
+        <h2>Insights</h2>
+        <div class="result">
+            <h4>Jobs Matched</h4>
+            <div class="result__value">{{ totalJobs }}</div>
+        </div>
+        <div class="result">
+            <h4>Profile Completion</h4>
+            <div class="result__value">{{ profileProgress }}</div>
+        </div>
+        <div *ngIf="profileProgress > 50">
+            <h4>Next Steps</h4>
+            <mat-nav-list>
+                <a mat-list-item href="#">Security Vetting</a>
+                <a mat-list-item href="#">Get training</a>
+                <a mat-list-item href="#">Earn badges</a>
+            </mat-nav-list>
+            <ul></ul>
+        </div>
+    </div>
+    <div class="container__content">
+        <router-outlet></router-outlet>
+    </div>
+</div>

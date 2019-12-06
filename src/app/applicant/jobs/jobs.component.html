@@ -1,0 +1,24 @@
+<mat-horizontal-stepper [linear]="true" [selectedIndex]="index">
+    <mat-step [editable]="false"  label="Question 1"></mat-step>
+    <mat-step [editable]="false" label="Question 2"></mat-step>
+    <mat-step [editable]="false" label="Question 3"></mat-step>
+    <mat-step [editable]="false" label="Job matches"></mat-step>
+</mat-horizontal-stepper>
+
+<div>
+    <h1>Your matched jobs</h1>
+</div>
+
+<div class="jobs">
+    <mat-selection-list #shoes>
+        <mat-list-option *ngFor="let job of listOfJobs">
+            <div matLine><strong>{{job.title}}</strong> ({{ job.skill.join(', ') }})</div>
+            <div style="font-weight: 300" matLine>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse condimentum aliquet nibh, sed hendrerit dolor volutpat quis.</div>
+            <div matLine><span style="color: #44dd44">{{ job.percent / 100 | percent }} value match</span></div>
+        </mat-list-option>
+    </mat-selection-list>
+</div>
+
+<div align="end">
+    <button mat-raised-button type="button" color="accent" [routerLink]="['/', 'applicant', 'complete']">Apply</button>
+</div>
